@@ -1,7 +1,7 @@
 // db.ts
 import { Pool } from 'pg';
 import { config } from 'dotenv';
-config(); // Load environment variables from .env.local
+config({ path: '.env.example' }); // Load environment variables from .env.local
 
 // Log environment variables to verify they are correctly loaded
 console.log('PG_USER:', String(process.env.PG_USER));
@@ -10,7 +10,7 @@ console.log('PG_DATABASE:', String(process.env.PG_DATABASE));
 console.log('PG_PASSWORD:', String(process.env.PG_PASSWORD));
 console.log('PG_PORT:', String(process.env.PG_PORT));
 console.log('PG_CONNECT_TIMEOUT:', String(process.env.PG_CONNECT_TIMEOUT));
-// console.log('PG_SSL_MODE:', String(process.env.PG_SSL_MODE));
+console.log('PG_SSL_MODE:', String(process.env.PG_SSL_MODE));
 
 const pool = new Pool({
   user: String(process.env.PG_USER),
