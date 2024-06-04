@@ -1,6 +1,6 @@
 // app/api/test-conn/route.ts
 import { NextRequest, NextResponse } from 'next/server';
-import pool from '../../../db';
+import pool from '../../db';
 
 export async function GET(request: NextRequest) {
   console.log('Handler called');
